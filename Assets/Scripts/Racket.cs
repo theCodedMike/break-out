@@ -15,7 +15,8 @@ public class Racket : MonoBehaviour
         {
             if (transform.position.x > -BorderWidth)
                 transform.Translate(Vector3.left * (Time.deltaTime * speed));
-        } else if (Input.GetKey(KeyCode.RightArrow))
+        } 
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             if(transform.position.x < BorderWidth)
                 transform.Translate(Vector3.right * (Time.deltaTime * speed));
