@@ -29,11 +29,10 @@ public class BrickController : MonoBehaviour
         {
             _levelLoader.brickCount--;
             Destroy(gameObject);
-
             
             if (Random.value < upgradeProbability) // 道具生成概率
             {
-                //print("-------------------生成道具了-------------------");
+                // 在小球位置生成道具
                 Instantiate(upgradePrefab, new Vector3(other.transform.position.x, other.transform.position.y, 0),
                     Quaternion.identity);
             }

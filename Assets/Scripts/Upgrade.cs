@@ -1,6 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+
 public class Upgrade : MonoBehaviour
 {
     public Sprite[] sprites;
@@ -8,6 +9,8 @@ public class Upgrade : MonoBehaviour
     public string upgradeName;
 
     private Ball _ball;
+
+    private Vector3 _pos;
     
     
     private void Start()
@@ -20,7 +23,10 @@ public class Upgrade : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, 0);
+        //transform.position = new Vector3(transform.position.x, transform.position.y - 0.05f, 0);
+        _pos = transform.position;
+        _pos.y -= 0.05f;
+        transform.position = _pos;
         
         if (transform.position.y <= _ball.endY)
             Destroy(gameObject);

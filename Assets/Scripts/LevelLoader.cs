@@ -18,14 +18,14 @@ public class LevelLoader : MonoBehaviour
     }
 
     // 随机获取地图
-    public string GetRandomLevelName()
+    private string GetRandomLevelName()
     {
         int level = Random.Range(1, 6);
         return $"Assets/Levels/level_{level}.txt";
     }
 
     // 加载地图
-    public void LoadLevel(string levelName)
+    private void LoadLevel(string levelName)
     {
         using StreamReader reader = new StreamReader(levelName, Encoding.Default);
         string line = reader.ReadLine();
