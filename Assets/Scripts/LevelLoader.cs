@@ -14,7 +14,6 @@ public class LevelLoader : MonoBehaviour
     private void Start()
     {
         string levelName = GetRandomLevelName();
-        print($"LevelLoader: {levelName}");
         LoadLevel(levelName);
     }
 
@@ -70,7 +69,7 @@ public class LevelLoader : MonoBehaviour
             case 'P': return ("pink", 1);
             case 'R': return ("red", 5);
             case 'Y': return ("yellow", 4);
-            default: Destroy(brick);
+            default: Destroy(brick); 
                 throw new UnityException($"未知字符{ch}");
         }
     }

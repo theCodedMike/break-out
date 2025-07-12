@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Ball : MonoBehaviour
 {
     [Header("小球移动速度")]
-    public float speed = 10;
+    public float speed = 15;
     [Header("游戏结束的下降距离")]
     public float endY = -8;
 

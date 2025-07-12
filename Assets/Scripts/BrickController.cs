@@ -3,8 +3,15 @@ using UnityEngine;
 
 public class BrickController : MonoBehaviour
 {
+    [Header("道具预制体")]
+    public GameObject upgradePrefab;
+    [Header("生成道具的概率")]
+    [Range(0f, 1.0f)]
+    public float upgradeProbability = 0.8f;
+    
     private LevelLoader _levelLoader;
     private Brick _brick;
+    
     
     private void Start()
     {
@@ -22,6 +29,14 @@ public class BrickController : MonoBehaviour
         {
             _levelLoader.brickCount--;
             Destroy(gameObject);
+
+            
+            if (Random.value < upgradeProbability) // 道具生成概率
+            {
+                //print("-------------------生成道具了-------------------");
+                Instantiate(upgradePrefab, new Vector3(other.transform.position.x, other.transform.position.y, 0),
+                    Quaternion.identity);
+            }
         }
     }
 }
